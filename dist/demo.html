@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>HcRoadResurfacings demo</title>
+
+  <link rel="stylesheet" href="./HcRoadResurfacings.css">
+</head>
+<body>
+  <noscript>
+    <strong>We're sorry but hc-road-resurfacings doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+
+  <div class="container py-5">
+    <div id="app">
+      <demo></demo>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="./HcRoadResurfacings.umd.js"></script>
+  <script>
+    new Vue({
+      components: {
+        demo: HcRoadResurfacings
+      }
+    }).$mount('#app')
+  </script>
+</body>
+</html>
