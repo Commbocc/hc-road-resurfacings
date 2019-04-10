@@ -1,28 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div v-if="loading" class="text-center h2">
+      Loading...
+      <i class="fas fa-spinner fa-pulse"></i>
+    </div>
+
+    <ResurfacingsTable v-show="!loading" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { mapState } from 'vuex'
+import store from './store'
+import ResurfacingsTable from './components/Table.vue'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  store,
+  name: 'RoadResurfacings',
+  components: { ResurfacingsTable },
+  computed: mapState({
+    loading: state => state.loading,
+  })
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style lang="scss" src="./assets/main.scss"></style>
