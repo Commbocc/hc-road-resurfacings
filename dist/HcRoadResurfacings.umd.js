@@ -3064,14 +3064,14 @@ var esri_loader = __webpack_require__("afaa");
             FeatureLayer = _ref2[0];
 
         return new FeatureLayer({
-          url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/RoadResurfacePlan/MapServer/0'
+          url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CIP/Transportation_Planning/FeatureServer/1'
         });
       });
     },
     queryParams: function queryParams() {
       return {
-        where: '1=1',
-        orderByFields: ['STREET ASC'],
+        where: "1=1 AND CAST(FY_Planned AS INT) >= ".concat(new Date().getFullYear()),
+        orderByFields: ['FY_Planned ASC', 'STREET ASC'],
         outFields: '*'
       };
     }
@@ -3148,14 +3148,16 @@ external_commonjs_vue_commonjs2_vue_root_Vue_default.a.use(vuex_esm);
     }
   }
 }));
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"553e40dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Table.vue?vue&type=template&id=2fe70dc2&
-var Tablevue_type_template_id_2fe70dc2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"table-responsive"},[_c('table',{staticClass:"table table-striped table-bordered table-sm small"},[_vm._m(0),_c('tbody',_vm._l((_vm.resurfacings),function(resurfacing,i){return _c('tr',{key:i},[_c('td',[_vm._v(_vm._s(resurfacing.STREET))]),_c('td',[_vm._v(_vm._s(resurfacing.FRSTNM))]),_c('td',[_vm._v(_vm._s(resurfacing.TOSTNM))]),_c('td',[_vm._v(_vm._s(resurfacing.Type))])])}),0)])])}
-var Tablevue_type_template_id_2fe70dc2_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',[_c('tr',[_c('th',[_vm._v("Street")]),_c('th',[_vm._v("From")]),_c('th',[_vm._v("To")]),_c('th',[_vm._v("Type")])])])}]
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"553e40dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Table.vue?vue&type=template&id=4ddf66eb&
+var Tablevue_type_template_id_4ddf66eb_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"table-responsive"},[_c('table',{staticClass:"table table-striped table-bordered table-sm small"},[_vm._m(0),_c('tbody',_vm._l((_vm.resurfacings),function(resurfacing,i){return _c('tr',{key:i},[_c('td',[_vm._v(_vm._s(resurfacing.STREET))]),_c('td',[_vm._v(_vm._s(resurfacing.FRSTNM))]),_c('td',[_vm._v(_vm._s(resurfacing.TOSTNM))]),_c('td',[_vm._v(_vm._s(resurfacing.Type))]),_c('td',[_vm._v(_vm._s(resurfacing.FY_Planned))])])}),0)])])}
+var Tablevue_type_template_id_4ddf66eb_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',[_c('tr',[_c('th',[_vm._v("Street")]),_c('th',[_vm._v("From")]),_c('th',[_vm._v("To")]),_c('th',[_vm._v("Type")]),_c('th',[_vm._v("Planned Year")])])])}]
 
 
-// CONCATENATED MODULE: ./src/components/Table.vue?vue&type=template&id=2fe70dc2&
+// CONCATENATED MODULE: ./src/components/Table.vue?vue&type=template&id=4ddf66eb&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Table.vue?vue&type=script&lang=js&
+//
+//
 //
 //
 //
@@ -3298,8 +3300,8 @@ function normalizeComponent (
 
 var component = normalizeComponent(
   components_Tablevue_type_script_lang_js_,
-  Tablevue_type_template_id_2fe70dc2_render,
-  Tablevue_type_template_id_2fe70dc2_staticRenderFns,
+  Tablevue_type_template_id_4ddf66eb_render,
+  Tablevue_type_template_id_4ddf66eb_staticRenderFns,
   false,
   null,
   null,
