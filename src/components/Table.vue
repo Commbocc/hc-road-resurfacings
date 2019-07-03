@@ -7,6 +7,7 @@
           <th>From</th>
           <th>To</th>
           <th>Type</th>
+          <th>Planned Year</th>
         </tr>
       </thead>
       <tbody>
@@ -15,6 +16,7 @@
           <td>{{ resurfacing.FRSTNM }}</td>
           <td>{{ resurfacing.TOSTNM }}</td>
           <td>{{ resurfacing.Type }}</td>
+          <td>{{ resurfacing.FY_Planned }}</td>
         </tr>
       </tbody>
     </table>

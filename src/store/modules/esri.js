@@ -5,13 +5,13 @@ export default {
     resurfacingsFeatureLayer: () => {
       return loadModules(['esri/layers/FeatureLayer']).then(([FeatureLayer]) => {
         return new FeatureLayer({
-          url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/RoadResurfacePlan/MapServer/0'
+          url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CIP/Transportation_Planning/FeatureServer/1'
         })
       })
     },
     queryParams: () => ({
-      where: '1=1',
-      orderByFields: ['STREET ASC'],
+      where: `1=1 AND CAST(FY_Planned AS INT) >= ${(new Date()).getFullYear()}`,
+      orderByFields: ['FY_Planned ASC', 'STREET ASC'],
       outFields: '*'
     })
   }
